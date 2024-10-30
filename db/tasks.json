@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": "10001",
+      "task": "Design user interface for the task manager",
+      "status": "pending",
+      "assigned_to": "AAP001"
+    },
+    {
+      "id": "10002",
+      "task": "Implement WebSocket server for real-time notifications",
+      "status": "in progress",
+      "assigned_to": "AAP002"
+    },
+    {
+      "id": "10003",
+      "task": "Create CRUD operations for task management",
+      "status": "pending",
+      "assigned_to": "AAP003"
+    },
+    {
+      "id": "10004",
+      "task": "Integrate JSON server for task storage",
+      "status": "in progress",
+      "assigned_to": "AAP004"
+    },
+    {
+      "id": "10005",
+      "task": "Set up notification system on the notice board",
+      "status": "pending",
+      "assigned_to": "AAP005"
+    }
+  ]
+}
