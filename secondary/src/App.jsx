@@ -1,13 +1,14 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Board from "./components/Board";
+import Provider from "./context/provider";
+import Taskboard from "./components/Taskboard";
 
 function App() {
   return (
-    <div className="bg-custom-yellow h-screen">
-      <Navbar />
-      <Board />
-    </div>
+    <Provider>
+      <Taskboard />
+    </Provider>
   );
 }
 

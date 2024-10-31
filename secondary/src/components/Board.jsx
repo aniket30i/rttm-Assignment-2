@@ -58,7 +58,7 @@ const Board = () => {
 
   return (
     <>
-      <div className="mt-20 w-2/3 ml-auto mr-auto border-2 border-yellow-400 p-1 rounded-lg h-[38rem] overflow-x-auto overflow-y-auto">
+      <div className="mt-20 w-2/3 ml-auto mr-auto border-2 border-yellow-400 p-1 rounded-lg h-[34rem] overflow-x-auto overflow-y-auto">
         <div className="flex items-center gap-2">
           <input
             type="text"
@@ -75,12 +75,13 @@ const Board = () => {
             <option value="all">All</option>
             <option value="pending">Pending</option>
             <option value="in progress">In Progress</option>
+            <option value="completed">Completed</option>
           </select>
         </div>
 
         <table className="table table-hover table-responsive">
           <thead>
-            <tr>
+            <tr className="text-left">
               <td>
                 <strong>Task ID</strong>
               </td>
@@ -97,7 +98,7 @@ const Board = () => {
           </thead>
           <tbody>
             {paginatedTasks.map((task) => (
-              <tr key={task.id}>
+              <tr key={task.id} className="text-left">
                 <td>{task.id}</td>
                 <td>{task.task}</td>
                 <td>{task.status}</td>

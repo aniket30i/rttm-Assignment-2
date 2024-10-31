@@ -69,13 +69,13 @@
     {
       "id": "10012",
       "task": "Set up continuous integration pipeline",
-      "status": "in progress",
+      "status": "completed",
       "assigned_to": "AAP002"
     },
     {
       "id": "10013",
       "task": "Document API endpoints and usage",
-      "status": "pending",
+      "status": "completed",
       "assigned_to": "AAP003"
     },
     {
