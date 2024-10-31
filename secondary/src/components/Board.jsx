@@ -1,5 +1,5 @@
 import useFetchTask from "../hooks/useFetchTask";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Board = () => {
   const { tasks, isLoading, error } = useFetchTask(

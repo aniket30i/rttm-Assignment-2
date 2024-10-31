@@ -5,7 +5,7 @@ import Context from "../context/context";
 import Notification from "./Notification";
 
 const Taskboard = () => {
-  const { isNotifOpen, setIsNotifOpen } = useContext(Context);
+  const { isNotifOpen } = useContext(Context);
   return (
     <div>
       <div className="bg-custom-yellow h-screen">
