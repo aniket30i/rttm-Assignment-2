@@ -83,6 +83,18 @@
       "task": "Research third-party integrations for analytics",
       "status": "pending",
       "assigned_to": "AAP001"
+    },
+    {
+      "id": "10023",
+      "task": "Write unit tests for login",
+      "status": "pending",
+      "assigned_to": "AAP002"
+    },
+    {
+      "id": "10099",
+      "task": "Write component for feature",
+      "status": "pending",
+      "assigned_to": "AAP003"
     }
   ]
 }

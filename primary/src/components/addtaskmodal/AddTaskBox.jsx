@@ -1,9 +1,8 @@
+import { useState } from "react";
 import useTaskAction from "../../hooks/useTaskAction";
 
-const AddTaskBox = () => {
-  const { tasks, isLoading, error, addTask } = useTaskAction(
-    "http://localhost:3080/tasks"
-  );
+const AddTaskBox = ({ setAddClicked }) => {
+  const { addTask } = useTaskAction("http://localhost:3080/tasks");
   const [newTask, setNewTask] = useState({
     id: "",
     task: "",
@@ -20,14 +19,15 @@ const AddTaskBox = () => {
       status: "pending",
       assigned_to: "",
     });
+    setAddClicked(false);
   };
   return (
     <div>
-      <div>
+      <div className="bg-yellow-400 p-2 rounded-lg">
         <form onSubmit={handleAddTask} className="flex justify-center gap-2">
           <input
             type="text"
-            placeholder="Unique ID - (139xxx)"
+            placeholder="Unique ID - [10xxx]"
             className="inputUtil"
             value={newTask.id}
             onChange={(e) => setNewTask({ ...newTask, id: e.target.value })}
@@ -35,15 +35,15 @@ const AddTaskBox = () => {
           />
           <input
             type="text"
-            placeholder="Full Name"
+            placeholder="Task "
             className="inputUtil"
             value={newTask.task}
             onChange={(e) => setNewTask({ ...newTask, task: e.target.value })}
             required
           />
           <input
-            type="email"
-            placeholder="Email"
+            type="text"
+            placeholder="Status"
             className="inputUtil"
             value={newTask.status}
             onChange={(e) => setNewTask({ ...newTask, status: e.target.value })}
@@ -51,7 +51,7 @@ const AddTaskBox = () => {
           />
           <input
             type="text"
-            placeholder="D.O.B - (YYYY-MM-DD)"
+            placeholder="Assigned To [AAPXXX]"
             className="inputUtil"
             value={newTask.assigned_to}
             onChange={(e) =>
@@ -64,6 +64,12 @@ const AddTaskBox = () => {
             type="submit"
           >
             Add Task
+          </button>
+          <button
+            className="p-2 bg-gray-500 rounded-lg font-semibold text-slate-100"
+            onClick={() => setAddClicked(false)}
+          >
+            Cancel
           </button>
         </form>
       </div>
