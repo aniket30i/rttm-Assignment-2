@@ -69,7 +69,7 @@ const AddTaskBox = ({ setAddClicked }) => {
             Add Task
           </button>
           <button
-            className="p-2 bg-gray-500 rounded-lg font-semibold text-slate-100"
+            className="p-2 bg-gray-500 hover:bg-gray-600 rounded-lg font-semibold text-slate-100"
             onClick={() => setAddClicked(false)}
           >
             Cancel

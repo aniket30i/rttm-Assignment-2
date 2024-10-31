@@ -204,7 +204,7 @@ const TaskManagement = () => {
           </button>
           <button
             type="button"
-            className="p-2 bg-emerald-600 hover:bg-emerald-700 text-slate-100 font-semibold rounded-lg"
+            className="p-2 bg-gray-600 hover:bg-gray-800 text-slate-100 font-semibold rounded-lg"
             onClick={() => setEditingTask(null)}
           >
             Cancel
