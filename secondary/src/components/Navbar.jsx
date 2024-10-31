@@ -11,7 +11,7 @@ const Navbar = () => {
           <p className="ml-1">See your task here</p>
         </div>
         <div onClick={() => setIsNotifOpen(true)}>
-          <img src={notif} alt="bell-icon" className="h-9" />
+          <img src={notif} alt="bell-icon" className="h-9 cursor-pointer" />
         </div>
       </div>
     </div>
