@@ -2,23 +2,30 @@
   "notifications": [
     {
       "id": "N001",
-      "message": "Task 'Design user interface for the task manager' has been assigned to you.",
+      "message": "Design user interface for the task manager",
       "task_id": "10001",
       "assigned_to": "AAP001",
       "timestamp": "2024-10-30T12:30:00Z"
     },
     {
       "id": "N002",
-      "message": "Task 'Implement WebSocket server for real-time notifications' status updated to 'in progress'.",
+      "message": "Implement WebSocket server for real-time notifications",
       "task_id": "10002",
       "assigned_to": "AAP002",
       "timestamp": "2024-10-30T12:45:00Z"
     },
     {
       "id": "N003",
-      "message": "Task 'Set up notification system on the notice board' has been assigned to you.",
+      "message": "Set up notification system on the notice board",
       "task_id": "10005",
-      "assigned_to": "AAP005",
+      "assigned_to": "AAP004",
+      "timestamp": "2024-10-30T13:00:00Z"
+    },
+    {
+      "id": "N003",
+      "message": "Set up notification system on the notice board",
+      "task_id": "10005",
+      "assigned_to": "AAP004",
       "timestamp": "2024-10-30T13:00:00Z"
     }
   ]
