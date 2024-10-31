@@ -11,6 +11,9 @@ export default {
       fontFamily: {
         sans: ["Josefin Sans", "sans-serif"],
       },
+      screens: {
+        xs: "320px",
+      },
     },
   },
   plugins: [],
