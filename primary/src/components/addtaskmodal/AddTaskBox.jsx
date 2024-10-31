@@ -23,7 +23,7 @@ const AddTaskBox = ({ setAddClicked }) => {
   };
   return (
     <div>
-      <div className="bg-yellow-400 p-2 rounded-lg">
+      <div className="bg-amber-200 p-2 rounded-lg">
         <form
           onSubmit={handleAddTask}
           className="flex justify-center gap-2  xs:flex-col lg:flex-row"

@@ -75,9 +75,9 @@ const TaskManagement = () => {
           {addClicked ? (
             <AddTaskBox setAddClicked={setAddClicked} />
           ) : (
-            <div className="flex gap-2">
+            <div className="flex gap-2 xs:flex-col lg:flex-row">
               <button
-                className="p-2 bg-cyan-500 text-white rounded flex items-center"
+                className="p-2 bg-amber-500 text-white rounded flex items-center"
                 onClick={() => setAddClicked(true)}
               >
                 <span className="text-xl text-center">+</span> Add New Task
@@ -92,15 +92,23 @@ const TaskManagement = () => {
                 className="inputUtil border-2 border-yellow-400"
                 onChange={handleStatusFilter}
               >
-                <option value="all">All</option>
-                <option value="pending">Pending</option>
-                <option value="in progress">In Progress</option>
-                <option value="completed">Completed</option>
+                <option value="all" className="bg-amber-400 ">
+                  All
+                </option>
+                <option value="pending" className="bg-amber-400 ">
+                  Pending
+                </option>
+                <option value="in progress" className="bg-amber-400 ">
+                  In Progress
+                </option>
+                <option value="completed" className="bg-amber-400 ">
+                  Completed
+                </option>
               </select>
             </div>
           )}
         </div>
-        <div className="min-h-[33rem]">
+        <div className="overflow-y-auto h-80 min-h-[33rem]">
           <table className="table table-hover table-bordered">
             <thead>
               <tr>
@@ -164,7 +172,7 @@ const TaskManagement = () => {
       {editingTask && (
         <form
           onSubmit={handleUpdateTask}
-          className="flex gap-4 p-4 bg-neutral-700 justify-center w-screen"
+          className="flex gap-4 p-4 mt-2 bg-amber-300 justify-center w-screen xs:flex-col lg:flex-row"
         >
           <input
             type="text"
