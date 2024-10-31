@@ -1,12 +1,6 @@
 {
   "tasks": [
     {
-      "id": "10001",
-      "task": "Design user interface for the task manager",
-      "status": "pending",
-      "assigned_to": "AAP001"
-    },
-    {
       "id": "10002",
       "task": "Implement WebSocket server for real-time notifications",
       "status": "in progress",
