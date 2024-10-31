@@ -1,10 +1,11 @@
-import { useState } from "react";
-import "./App.css";
+import TheAssigner from "./components/TheAssigner";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <>H i P R</>;
+  return (
+    <div>
+      <TheAssigner />
+    </div>
+  );
 }
 
 export default App;
