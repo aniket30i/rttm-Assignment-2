@@ -29,6 +29,66 @@
       "task": "Set up notification system on the notice board",
       "status": "pending",
       "assigned_to": "AAP005"
+    },
+    {
+      "id": "10006",
+      "task": "Develop authentication flow for users",
+      "status": "pending",
+      "assigned_to": "AAP006"
+    },
+    {
+      "id": "10007",
+      "task": "Set up frontend routing for different views",
+      "status": "in progress",
+      "assigned_to": "AAP007"
+    },
+    {
+      "id": "10008",
+      "task": "Optimize app performance for better load times",
+      "status": "pending",
+      "assigned_to": "AAP008"
+    },
+    {
+      "id": "10009",
+      "task": "Add error handling and validation for inputs",
+      "status": "in progress",
+      "assigned_to": "AAP009"
+    },
+    {
+      "id": "10010",
+      "task": "Implement responsive design for mobile devices",
+      "status": "pending",
+      "assigned_to": "AAP010"
+    },
+    {
+      "id": "10011",
+      "task": "Create unit tests for core functionality",
+      "status": "pending",
+      "assigned_to": "AAP011"
+    },
+    {
+      "id": "10012",
+      "task": "Set up continuous integration pipeline",
+      "status": "in progress",
+      "assigned_to": "AAP012"
+    },
+    {
+      "id": "10013",
+      "task": "Document API endpoints and usage",
+      "status": "pending",
+      "assigned_to": "AAP013"
+    },
+    {
+      "id": "10014",
+      "task": "Implement data caching for faster access",
+      "status": "in progress",
+      "assigned_to": "AAP014"
+    },
+    {
+      "id": "10015",
+      "task": "Research third-party integrations for analytics",
+      "status": "pending",
+      "assigned_to": "AAP015"
     }
   ]
 }

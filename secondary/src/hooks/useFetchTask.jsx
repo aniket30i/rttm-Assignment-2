@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useFetchTask = (url) => {
   const [tasks, setTasks] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
