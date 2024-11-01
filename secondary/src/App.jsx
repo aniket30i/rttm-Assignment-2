@@ -1,12 +1,10 @@
 import Provider from "./context/provider";
 import Taskboard from "./components/Taskboard";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 function App() {
-  const [updateTrigger, setUpdateTrigger] = useState(0);
   useEffect(() => {
     const ws = new WebSocket("ws://localhost:8080");
-
     ws.onopen = () => {
       console.log("WebSocket connection opened");
     };
@@ -15,16 +13,11 @@ function App() {
       const notificationData = JSON.parse(event.data);
       alert(`Notification: ${notificationData.message}`);
       console.log(`Received notification: ${notificationData.message}`);
-      setUpdateTrigger((prev) => prev + 1);
-    };
-
-    return () => {
-      ws.close();
     };
   }, []);
   return (
     <Provider>
-      <Taskboard trigger={updateTrigger} />
+      <Taskboard />
     </Provider>
   );
 }

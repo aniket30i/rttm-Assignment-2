@@ -12,19 +12,16 @@ const Board = ({ trigger }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const tasksPerPage = 10;
 
-  // Search input handler
   const handleSearch = (query) => {
     setSearchedQuery(query);
     setCurrentPage(1); // Reset to the first page
   };
 
-  // Status filter handler
   const handleStatusFilter = (e) => {
     setStatusFilter(e.target.value);
     setCurrentPage(1); // Reset to the first page
   };
 
-  // Filter tasks based on both search and status
   const filteredTasks = tasks.filter((task) => {
     const matchesStatus =
       statusFilter === "all" || task.status === statusFilter;
@@ -32,23 +29,24 @@ const Board = ({ trigger }) => {
       .toLowerCase()
       .includes(searchedQuery.toLowerCase());
 
-    if (searchedQuery && statusFilter !== "all") {
-      // Both search and status
-      return matchesStatus && matchesSearch;
-    } else if (searchedQuery) {
-      // Only search
-      return matchesSearch;
-    } else if (statusFilter !== "all") {
-      // Only status filter
-      return matchesStatus;
-    }
-    // No filter
-    return true;
+    return matchesStatus && matchesSearch;
   });
 
-  const totalPages = Math.ceil(filteredTasks.length / tasksPerPage);
+  const [isSortedAsc, setIsSortedAsc] = useState(true);
+
+  const sortTaskByDeadline = () => {
+    setIsSortedAsc(!isSortedAsc);
+  };
+
+  const sortedFilteredTasks = [...filteredTasks].sort((a, b) => {
+    const dateA = new Date(a.deadline);
+    const dateB = new Date(b.deadline);
+    return isSortedAsc ? dateA - dateB : dateB - dateA;
+  });
+
+  const totalPages = Math.ceil(sortedFilteredTasks.length / tasksPerPage);
   const startIndex = (currentPage - 1) * tasksPerPage;
-  const paginatedTasks = filteredTasks.slice(
+  const paginatedTasks = sortedFilteredTasks.slice(
     startIndex,
     startIndex + tasksPerPage
   );
@@ -59,28 +57,33 @@ const Board = ({ trigger }) => {
 
   return (
     <>
-      <div className="mt-20 w-2/3 ml-auto mr-auto border-2 border-yellow-400 p-1 rounded-lg h-[34rem] overflow-x-auto overflow-y-auto">
-        <div className="flex items-center gap-2">
-          <input
-            type="text"
-            id="Search"
-            placeholder="Search by Assign ID"
-            className="border-2 border-yellow-200 p-1 mb-2 rounded-lg focus:outline-none focus:ring focus:ring-yellow-300"
-            onChange={(e) => handleSearch(e.target.value)}
-          />
-          <p>Filter by status</p>
-          <select
-            className="w-32 h-9 rounded-lg border-2 border-yellow-200"
-            onChange={handleStatusFilter}
-          >
-            <option value="all">All</option>
-            <option value="pending">Pending</option>
-            <option value="in progress">In Progress</option>
-            <option value="completed">Completed</option>
-          </select>
-        </div>
-
-        <table className="table table-hover table-responsive">
+      <div className="flex flex-col items-center md:flex-row justify-center gap-2 mt-10 ml-auto mr-auto max-w-[40rem] ">
+        <input
+          type="text"
+          id="Search"
+          placeholder="Search by Assign ID"
+          className="border-2 border-yellow-200 p-1 mb-2 rounded-lg w-64 focus:outline-none focus:ring focus:ring-yellow-300 "
+          onChange={(e) => handleSearch(e.target.value)}
+        />
+        <p className="w-32">Filter by status</p>
+        <select
+          className="w-32 h-9 rounded-lg border-2 border-yellow-200"
+          onChange={handleStatusFilter}
+        >
+          <option value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="in progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button
+          onClick={sortTaskByDeadline}
+          className="p-2 bg-yellow-400 text-zinc-900 rounded font-semibold"
+        >
+          Sort by Deadline {isSortedAsc ? "↑" : "↓"}
+        </button>
+      </div>
+      <div className="mt-10 w-2/3 mx-auto border-2 border-yellow-400 p-1 rounded-lg h-[34rem] overflow-auto">
+        <table className="table table-hover">
           <thead>
             <tr className="text-left">
               <td>
@@ -95,6 +98,9 @@ const Board = ({ trigger }) => {
               <td>
                 <strong>Assigned To</strong>
               </td>
+              <td>
+                <strong>Deadline</strong>
+              </td>
             </tr>
           </thead>
           <tbody>
@@ -104,6 +110,7 @@ const Board = ({ trigger }) => {
                 <td>{task.task}</td>
                 <td>{task.status}</td>
                 <td>{task.assigned_to}</td>
+                <td>{task.deadline}</td>
               </tr>
             ))}
           </tbody>
@@ -119,9 +126,14 @@ const Board = ({ trigger }) => {
             <p className="text-xl text-red-500">Error: {error} !!!</p>
           </div>
         )}
+        {paginatedTasks.length === 0 && !isLoading && (
+          <div className="flex justify-center">
+            <p className="text-xl">No tasks found.</p>
+          </div>
+        )}
       </div>
 
-      <div className="flex justify-center items-center w-1/2 mt-4 ml-auto mr-auto">
+      <div className="flex justify-center items-center w-1/2 mt-4 mx-auto">
         <button
           className="p-1 bg-yellow-400 rounded-lg"
           onClick={handlePrev}

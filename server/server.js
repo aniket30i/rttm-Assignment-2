@@ -1,6 +1,14 @@
 const WebSocket = require("ws");
 const wss = new WebSocket.Server({ port: 8080 });
 
+const broadcastNotification = (notificationData) => {
+  wss.clients.forEach((client) => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(JSON.stringify(notificationData));
+    }
+  });
+};
+
 wss.on("connection", (ws) => {
   console.log("Client connected");
 

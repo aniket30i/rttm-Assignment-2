@@ -1,6 +1,5 @@
 export const sendNotification = async (notificationData) => {
   try {
-    // Save the notification to your mock API
     const response = await fetch("http://localhost:3070/notifications", {
       method: "POST",
       headers: {
@@ -15,11 +14,12 @@ export const sendNotification = async (notificationData) => {
 
     console.log("Notification saved to API");
 
+    // Broadcast to WebSocket
     const ws = new WebSocket("ws://localhost:8080");
     ws.onopen = () => {
       ws.send(JSON.stringify(notificationData));
       console.log("Notification broadcasted via WebSocket");
-      ws.close();
+      ws.close(); // close after sending
     };
   } catch (error) {
     console.error("Failed to send notification:", error);
