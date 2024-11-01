@@ -17,10 +17,11 @@ const AddTaskBox = ({ setAddClicked }) => {
     e.preventDefault();
     addTask(newTask);
     sendNotification({
-      id: newTask.id,
       task: newTask.task,
-      status: newTask.status,
+      message: "New task has been added - check board for info",
+      task_id: newTask.id,
       assigned_to: newTask.assigned_to,
+      timestamp: new Date().toISOString(),
       // timestamp: newTask.timestamp,
       // deadline:newTask.deadline
     });

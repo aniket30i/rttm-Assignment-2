@@ -2,38 +2,71 @@
   "notifications": [
     {
       "id": "N001",
-      "message": "Design user interface for the task manager",
+      "message": "New task has been added - check board for info",
       "task_id": "10001",
       "assigned_to": "AAP001",
       "timestamp": "2024-10-30T12:30:00Z"
     },
     {
       "id": "N002",
-      "message": "Implement WebSocket server for real-time notifications",
+      "message": "Task has been updated - check board for info",
       "task_id": "10002",
       "assigned_to": "AAP002",
       "timestamp": "2024-10-30T12:45:00Z"
     },
     {
       "id": "N003",
-      "message": "Set up notification system on the notice board",
+      "message": "New task has been added - check board for info",
       "task_id": "10005",
       "assigned_to": "AAP004",
       "timestamp": "2024-10-30T13:00:00Z"
     },
     {
-      "id": "N003",
-      "message": "Set up notification system on the notice board",
+      "id": "N004",
+      "message": "New task has been added - check board for info",
       "task_id": "10005",
       "assigned_to": "AAP004",
       "timestamp": "2024-10-30T13:00:00Z"
     },
     {
-      "id": "10023",
-      "message": "New Task Test the whole app added.",
-      "task": "Test the whole app",
-      "status": "pending",
-      "assigned_to": "AAP002"
+      "id": "9307",
+      "task": "Keep the fans on",
+      "message": "New task has been added - check board for info",
+      "task_id": "10043",
+      "assigned_to": "AAP001",
+      "timestamp": "2024-11-01T11:32:58.034Z"
+    },
+    {
+      "id": "3e36",
+      "task": "Water the plants",
+      "message": "New task has been added - check board for info",
+      "task_id": "12002",
+      "assigned_to": "AAP002",
+      "timestamp": "2024-11-01T13:05:32.123Z"
+    },
+    {
+      "id": "8fd1",
+      "task": "Implement WebSocket server for real-time notifications",
+      "message": "Task has been Update - check board for info",
+      "task_id": "10002",
+      "assigned_to": "AAP004",
+      "timestamp": "2024-11-01T13:08:51.083Z"
+    },
+    {
+      "id": "38f8",
+      "task": "rgergeargaergaerg",
+      "message": "New task has been added - check board for info",
+      "task_id": "342342",
+      "assigned_to": "AAP002",
+      "timestamp": "2024-11-01T13:16:19.989Z"
+    },
+    {
+      "id": "e250",
+      "task": "Implement WebSocket server for real-time notifications",
+      "message": "Task has been Update - check board for info",
+      "task_id": "10002",
+      "assigned_to": "AAP004",
+      "timestamp": "2024-11-01T13:21:35.756Z"
     }
   ]
 }

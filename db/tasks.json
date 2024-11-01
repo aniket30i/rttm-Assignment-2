@@ -3,8 +3,8 @@
     {
       "id": "10002",
       "task": "Implement WebSocket server for real-time notifications",
-      "status": "in progress",
-      "assigned_to": "AAP003"
+      "status": "completed",
+      "assigned_to": "AAP004"
     },
     {
       "id": "10003",
@@ -97,8 +97,44 @@
       "assigned_to": "AAP003"
     },
     {
-      "id": "10023",
-      "task": "Test the whole app",
+      "id": "10019",
+      "task": "Buy Graphics Card",
+      "status": "pending",
+      "assigned_to": "AAP002"
+    },
+    {
+      "id": "10047",
+      "task": "Setup the hosting service",
+      "status": "pending",
+      "assigned_to": "AAP004"
+    },
+    {
+      "id": "12234",
+      "task": "argeargergerg",
+      "status": "pending",
+      "assigned_to": "AAP001"
+    },
+    {
+      "id": "12233",
+      "task": "rwiflwelkejv",
+      "status": "pending",
+      "assigned_to": "AAP003"
+    },
+    {
+      "id": "10043",
+      "task": "Keep the fans on",
+      "status": "pending",
+      "assigned_to": "AAP001"
+    },
+    {
+      "id": "12002",
+      "task": "Water the plants",
+      "status": "pending",
+      "assigned_to": "AAP002"
+    },
+    {
+      "id": "342342",
+      "task": "rgergeargaergaerg",
       "status": "pending",
       "assigned_to": "AAP002"
     }

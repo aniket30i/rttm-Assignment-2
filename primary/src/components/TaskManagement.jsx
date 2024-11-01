@@ -3,6 +3,7 @@ import edit from "../assets/icons/edit.png";
 import del from "../assets/icons/del.png";
 import { useState } from "react";
 import AddTaskBox from "./addtaskmodal/AddTaskBox";
+import { sendNotification } from "../functions/sendNotification";
 
 const TaskManagement = () => {
   const { tasks, isLoading, error, updateTask, deleteTask } = useTaskAction(
@@ -61,6 +62,13 @@ const TaskManagement = () => {
     e.preventDefault();
     if (editingTask) {
       updateTask(editingTask);
+      sendNotification({
+        task: editingTask.task,
+        message: "Task has been Update - check board for info",
+        task_id: editingTask.id,
+        assigned_to: editingTask.assigned_to,
+        timestamp: new Date().toISOString(),
+      });
       setEditingTask(null);
     }
   };
