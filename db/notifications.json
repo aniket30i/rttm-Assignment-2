@@ -27,6 +27,13 @@
       "task_id": "10005",
       "assigned_to": "AAP004",
       "timestamp": "2024-10-30T13:00:00Z"
+    },
+    {
+      "id": "10023",
+      "message": "New Task Test the whole app added.",
+      "task": "Test the whole app",
+      "status": "pending",
+      "assigned_to": "AAP002"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useTaskAction from "../../hooks/useTaskAction";
+import { sendNotification } from "../../functions/sendNotification";
 
 const AddTaskBox = ({ setAddClicked }) => {
   const { addTask } = useTaskAction("http://localhost:3080/tasks");
@@ -8,16 +9,27 @@ const AddTaskBox = ({ setAddClicked }) => {
     task: "",
     status: "pending",
     assigned_to: "",
+    // timestamp: new Date().toISOString(),
+    // deadline:"",
   });
 
   const handleAddTask = (e) => {
     e.preventDefault();
     addTask(newTask);
+    sendNotification({
+      id: newTask.id,
+      task: newTask.task,
+      status: newTask.status,
+      assigned_to: newTask.assigned_to,
+      // timestamp: newTask.timestamp,
+      // deadline:newTask.deadline
+    });
     setNewTask({
       id: "",
       task: "",
       status: "pending",
       assigned_to: "",
+      // timestamp: "",
     });
     setAddClicked(false);
   };
