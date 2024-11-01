@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetchTask = (url) => {
+const useFetchTask = (url, trigger) => {
   const [tasks, setTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,7 +22,7 @@ const useFetchTask = (url) => {
       }
     };
     fetchTasks();
-  }, [url]);
+  }, [url, trigger]);
 
   return { tasks, isLoading, error };
 };

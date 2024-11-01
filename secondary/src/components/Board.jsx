@@ -1,9 +1,10 @@
 import useFetchTask from "../hooks/useFetchTask";
 import { useState } from "react";
 
-const Board = () => {
+const Board = ({ trigger }) => {
   const { tasks, isLoading, error } = useFetchTask(
-    "http://localhost:3080/tasks"
+    "http://localhost:3080/tasks",
+    trigger
   );
 
   const [searchedQuery, setSearchedQuery] = useState("");
@@ -128,7 +129,9 @@ const Board = () => {
         >
           Previous
         </button>
-        <span className="mx-2">{currentPage}</span>
+        <span className="mx-2">
+          Page {currentPage} of {totalPages}
+        </span>
         <button
           className="p-1 px-2 bg-yellow-400 rounded-lg"
           onClick={handleNext}

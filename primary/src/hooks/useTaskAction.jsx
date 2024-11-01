@@ -4,25 +4,23 @@ const useEmployeeActions = (url) => {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     const fetchTasks = async () => {
+      setLoading(true);
       try {
         const response = await fetch(url);
-        if (!response.ok) throw new Error("Failed to fetch Tasks");
+        if (!response.ok) throw new Error("Failed to fetch tasks");
         const data = await response.json();
         setTasks(data);
       } catch (err) {
-        setError(err);
+        setError(err.message);
       } finally {
         setLoading(false);
       }
     };
-
     fetchTasks();
-  }, [url, refresh]);
-
+  }, [url]);
   const addTask = async (newTask) => {
     try {
       const response = await fetch(url, {
@@ -65,8 +63,8 @@ const useEmployeeActions = (url) => {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Failed to delete Task");
-      setTasks((prev) => prev.filter((tasks) => tasks.taskId !== taskId));
-      setRefresh((prev) => !prev);
+      setTasks((prev) => prev.filter((tasks) => tasks.id !== taskId));
+      // setRefresh((prev) => !prev);
     } catch (err) {
       setError(err);
     }

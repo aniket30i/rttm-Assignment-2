@@ -4,13 +4,13 @@ import { useContext, useEffect } from "react";
 import Context from "../context/context";
 import Notification from "./Notification";
 
-const Taskboard = () => {
+const Taskboard = ({ trigger }) => {
   const { isNotifOpen } = useContext(Context);
   return (
     <div>
       <div className="bg-custom-yellow h-screen">
         <Navbar />
-        <Board />
+        <Board trigger={trigger} />
         {isNotifOpen && <Notification />}
       </div>
     </div>

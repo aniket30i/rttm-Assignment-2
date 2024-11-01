@@ -1,7 +1,7 @@
 import useTaskAction from "../hooks/useTaskAction";
 import edit from "../assets/icons/edit.png";
 import del from "../assets/icons/del.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddTaskBox from "./addtaskmodal/AddTaskBox";
 import { sendNotification } from "../functions/sendNotification";
 
@@ -57,6 +57,8 @@ const TaskManagement = () => {
       deleteTask(id);
     }
   };
+
+  useEffect(() => {}, [addClicked]);
 
   const handleUpdateTask = (e) => {
     e.preventDefault();
@@ -116,11 +118,10 @@ const TaskManagement = () => {
             </div>
           )}
         </div>
-        <div className="overflow-y-auto h-80 min-h-[33rem]">
+        <div className="overflow-y-auto h-80 min-h-[33rem] border-2 border-yellow-400 rounded-lg">
           <table className="table table-hover table-bordered">
             <thead>
               <tr>
-                <td>Serial</td>
                 <td>Task ID</td>
                 <td>Task</td>
                 <td>Status</td>
@@ -129,9 +130,8 @@ const TaskManagement = () => {
               </tr>
             </thead>
             <tbody>
-              {paginated.map((task, index) => (
+              {paginated.map((task) => (
                 <tr key={task.id}>
-                  <td>{index + 1}</td>
                   <td>{task.id}</td>
                   <td>{task.task}</td>
                   <td>{task.status}</td>
@@ -163,7 +163,7 @@ const TaskManagement = () => {
               onClick={handlePrev}
               className="p-2 bg-yellow-400 rounded-lg"
             >
-              Prev
+              Previous
             </button>
             <span className="mx-2">
               Page {currentPage} of {totalPages}
