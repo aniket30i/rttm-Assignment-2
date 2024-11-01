@@ -2,7 +2,7 @@ import useTaskAction from "../hooks/useTaskAction";
 import edit from "../assets/icons/edit.png";
 import del from "../assets/icons/del.png";
 import { useEffect, useState } from "react";
-import AddTaskBox from "./addtaskmodal/AddTaskBox";
+import AddTaskBox from "./addtaskstrip/AddTaskBox";
 import { sendNotification } from "../functions/sendNotification";
 
 const TaskManagement = () => {
@@ -14,9 +14,6 @@ const TaskManagement = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchedQuery, setSearchedQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
 
   const handleSearch = (query) => {
     setSearchedQuery(query);
@@ -35,15 +32,25 @@ const TaskManagement = () => {
       .toLowerCase()
       .includes(searchedQuery.toLowerCase());
 
-    return searchedQuery && statusFilter !== "all"
-      ? matchesStatus && matchesSearch
-      : searchedQuery
-      ? matchesSearch
-      : matchesStatus;
+    return matchesStatus && matchesSearch;
   });
 
-  const totalPages = Math.ceil(filteredTasks.length / itemsPerPage);
-  const paginated = filteredTasks.slice(startIndex, endIndex);
+  const [isSortedAsc, setIsSortedAsc] = useState(true);
+
+  const sortTaskByDeadline = () => {
+    setIsSortedAsc(!isSortedAsc);
+  };
+
+  const sortedFilteredTasks = [...filteredTasks].sort((a, b) => {
+    const dateA = new Date(a.deadline);
+    const dateB = new Date(b.deadline);
+    return isSortedAsc ? dateA - dateB : dateB - dateA;
+  });
+
+  const totalPages = Math.ceil(sortedFilteredTasks.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginated = sortedFilteredTasks.slice(startIndex, endIndex);
 
   const handleNext = () =>
     setCurrentPage(Math.min(currentPage + 1, totalPages));
@@ -58,15 +65,13 @@ const TaskManagement = () => {
     }
   };
 
-  useEffect(() => {}, [addClicked]);
-
   const handleUpdateTask = (e) => {
     e.preventDefault();
     if (editingTask) {
       updateTask(editingTask);
       sendNotification({
         task: editingTask.task,
-        message: "Task has been Update - check board for info",
+        message: "Task has been updated - check board for info",
         task_id: editingTask.id,
         assigned_to: editingTask.assigned_to,
         timestamp: new Date().toISOString(),
@@ -74,6 +79,8 @@ const TaskManagement = () => {
       setEditingTask(null);
     }
   };
+
+  useEffect(() => {}, [addClicked]);
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -115,6 +122,12 @@ const TaskManagement = () => {
                   Completed
                 </option>
               </select>
+              <button
+                onClick={sortTaskByDeadline}
+                className="p-2 bg-yellow-400 text-zinc-900 rounded font-semibold"
+              >
+                Sort of Deadline{isSortedAsc ? "↑" : "↓"}
+              </button>
             </div>
           )}
         </div>
@@ -126,6 +139,7 @@ const TaskManagement = () => {
                 <td>Task</td>
                 <td>Status</td>
                 <td>Assigned To</td>
+                <td>Deadline</td>
                 <td>Actions</td>
               </tr>
             </thead>
@@ -136,6 +150,7 @@ const TaskManagement = () => {
                   <td>{task.task}</td>
                   <td>{task.status}</td>
                   <td>{task.assigned_to}</td>
+                  <td>{task.deadline}</td>
                   <td>
                     <div className="flex gap-2">
                       <img
@@ -207,6 +222,16 @@ const TaskManagement = () => {
             className="inputUtil"
             placeholder="Assigned To"
             value={editingTask.assigned_to}
+            onChange={(e) =>
+              setEditingTask({ ...editingTask, assigned_to: e.target.value })
+            }
+            required
+          />
+          <input
+            type="date"
+            className="inputUtil"
+            placeholder="Deadline"
+            value={editingTask.deadline}
             onChange={(e) =>
               setEditingTask({ ...editingTask, assigned_to: e.target.value })
             }

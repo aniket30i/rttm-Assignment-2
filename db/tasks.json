@@ -4,97 +4,49 @@
       "id": "10002",
       "task": "Implement WebSocket server for real-time notifications",
       "status": "completed",
-      "assigned_to": "AAP004"
+      "assigned_to": "AAP004",
+      "timestamp": "2024-11-02T12:00:00Z",
+      "deadline": "2024-11-04"
     },
     {
       "id": "10003",
       "task": "Create CRUD operations for task management",
       "status": "pending",
-      "assigned_to": "AAP003"
+      "assigned_to": "AAP003",
+      "timestamp": "2024-11-02T12:00:00Z",
+      "deadline": "2024-11-05"
     },
     {
       "id": "10004",
       "task": "Integrate JSON server for task storage",
       "status": "in progress",
-      "assigned_to": "AAP004"
+      "assigned_to": "AAP004",
+      "timestamp": "2024-11-02T12:00:00Z",
+      "deadline": "2024-11-03"
     },
     {
       "id": "10005",
       "task": "Set up notification system on the notice board",
       "status": "pending",
-      "assigned_to": "AAP004"
+      "assigned_to": "AAP004",
+      "timestamp": "2024-11-02T12:00:00Z",
+      "deadline": "2024-11-04"
     },
     {
       "id": "10006",
-      "task": "Develop authentication flow for users",
+      "task": "Write unit tests for login",
       "status": "pending",
-      "assigned_to": "AAP004"
+      "assigned_to": "AAP001",
+      "timestamp": "2024-11-01T20:14:52.315Z",
+      "deadline": "2024-11-04"
     },
     {
       "id": "10007",
-      "task": "Set up frontend routing for different views",
-      "status": "in progress",
-      "assigned_to": "AAP004"
-    },
-    {
-      "id": "10008",
-      "task": "Optimize app performance for better load times",
+      "task": "Setup cloud server",
       "status": "pending",
-      "assigned_to": "AAP001"
-    },
-    {
-      "id": "10009",
-      "task": "Add error handling and validation for inputs",
-      "status": "in progress",
-      "assigned_to": "AAP001"
-    },
-    {
-      "id": "10010",
-      "task": "Implement responsive design for mobile devices",
-      "status": "pending",
-      "assigned_to": "AAP001"
-    },
-    {
-      "id": "10011",
-      "task": "Create unit tests for core functionality",
-      "status": "pending",
-      "assigned_to": "AAP002"
-    },
-    {
-      "id": "10012",
-      "task": "Set up continuous integration pipeline",
-      "status": "completed",
-      "assigned_to": "AAP002"
-    },
-    {
-      "id": "10013",
-      "task": "Document API endpoints and usage",
-      "status": "completed",
-      "assigned_to": "AAP003"
-    },
-    {
-      "id": "10014",
-      "task": "Implement data caching for faster access",
-      "status": "in progress",
-      "assigned_to": "AAP003"
-    },
-    {
-      "id": "10015",
-      "task": "Research third-party integrations for analytics",
-      "status": "pending",
-      "assigned_to": "AAP001"
-    },
-    {
-      "id": "10099",
-      "task": "Write component for feature",
-      "status": "pending",
-      "assigned_to": "AAP003"
-    },
-    {
-      "id": "10041",
-      "task": "Change the background color to brown",
-      "status": "in progress",
-      "assigned_to": "AAP004"
+      "assigned_to": "AAP002",
+      "timestamp": "2024-11-01T20:24:21.318Z",
+      "deadline": "2024-11-03"
     }
   ]
 }

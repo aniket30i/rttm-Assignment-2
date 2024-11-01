@@ -12,7 +12,9 @@ const useEmployeeActions = (url) => {
         const response = await fetch(url);
         if (!response.ok) throw new Error("Failed to fetch tasks");
         const data = await response.json();
+        console.log(data);
         setTasks(data);
+        console.log("Task-", tasks);
       } catch (err) {
         setError(err.message);
       } finally {

@@ -9,8 +9,8 @@ const AddTaskBox = ({ setAddClicked }) => {
     task: "",
     status: "pending",
     assigned_to: "",
-    // timestamp: new Date().toISOString(),
-    // deadline:"",
+    timestamp: new Date().toISOString(),
+    deadline: "",
   });
 
   const handleAddTask = (e) => {
@@ -74,6 +74,14 @@ const AddTaskBox = ({ setAddClicked }) => {
               setNewTask({ ...newTask, assigned_to: e.target.value })
             }
             required
+          />
+          <input
+            type="date"
+            className="inputUtil"
+            value={newTask.deadline}
+            onChange={(e) =>
+              setNewTask({ ...newTask, deadline: e.target.value })
+            }
           />
           <button
             className="p-2 bg-emerald-600 hover:bg-emerald-700 text-slate-100 font-semibold rounded-lg"
