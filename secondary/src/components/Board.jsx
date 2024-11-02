@@ -57,7 +57,7 @@ const Board = ({ trigger }) => {
 
   return (
     <>
-      <div className="flex flex-col items-center md:flex-row justify-center gap-2 mt-10 ml-auto mr-auto max-w-[40rem] ">
+      <div className="flex flex-col items-center md:flex-row justify-center gap-2 mt-10 ml-auto mr-auto max-w-[40rem]">
         <input
           type="text"
           id="Search"
@@ -77,7 +77,7 @@ const Board = ({ trigger }) => {
         </select>
         <button
           onClick={sortTaskByDeadline}
-          className="p-2 bg-yellow-400 text-zinc-900 rounded font-semibold"
+          className="p-2 w-48 bg-yellow-400 text-zinc-900 rounded "
         >
           Sort by Deadline {isSortedAsc ? "↑" : "↓"}
         </button>

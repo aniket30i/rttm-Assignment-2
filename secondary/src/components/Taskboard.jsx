@@ -8,7 +8,7 @@ const Taskboard = ({ trigger }) => {
   const { isNotifOpen } = useContext(Context);
   return (
     <div>
-      <div className="bg-custom-yellow h-screen">
+      <div className="bg-custom-yellow min-h-screen">
         <Navbar />
         <Board trigger={trigger} />
         {isNotifOpen && <Notification />}

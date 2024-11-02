@@ -39,7 +39,7 @@ const Notification = () => {
                     <strong>Task ID : {notification.task_id}</strong>
                   </p>
                   <p className="p-2 border-b-2 border-black">
-                    <strong>{notification.message}</strong> assigned to:{" "}
+                    <strong>{notification.message}</strong>-{" "}
                     <span className="text-emerald-600 font-medium">
                       {notification.assigned_to}
                     </span>{" "}

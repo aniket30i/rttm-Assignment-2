@@ -34,17 +34,17 @@
     },
     {
       "id": "10007",
-      "task": "Setup cloud server EC2",
-      "status": "pending",
+      "task": "Setup cloud server EC3 AWS",
+      "status": "in progress",
       "assigned_to": "AAP002",
       "timestamp": "2024-11-01T20:24:21.318Z",
       "deadline": "2024-11-03"
     },
     {
       "id": "10008",
-      "task": "Help with refactor",
-      "status": "pending",
-      "assigned_to": "AAP001",
+      "task": "Help with refactor backend",
+      "status": "in progress",
+      "assigned_to": "2024-11-08",
       "timestamp": "2024-11-01T21:15:56.936Z",
       "deadline": "2024-11-03"
     },
@@ -89,20 +89,28 @@
       "deadline": "2024-11-08"
     },
     {
-      "id": "10021",
-      "task": "Say Something",
-      "status": "pending",
-      "assigned_to": "AAP002",
-      "timestamp": "2024-11-01T22:03:47.885Z",
-      "deadline": "2024-11-07"
-    },
-    {
       "id": "10049",
-      "task": "Buy Hard Drives",
+      "task": "Buy 2 Hard Drives",
       "status": "pending",
       "assigned_to": "AAP002",
       "timestamp": "2024-11-02T10:11:30.534Z",
       "deadline": "2024-11-09"
+    },
+    {
+      "id": "10050",
+      "task": "Work on React Native",
+      "status": "in progress",
+      "assigned_to": "AAP002",
+      "timestamp": "2024-11-02T16:02:12.000Z",
+      "deadline": "2024-11-08"
+    },
+    {
+      "id": "10076",
+      "task": "Get FastApi security setup",
+      "status": "in progress",
+      "assigned_to": "AAP002",
+      "timestamp": "2024-11-02T16:10:19.790Z",
+      "deadline": "2024-11-11"
     }
   ]
 }
