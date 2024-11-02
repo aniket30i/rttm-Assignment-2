@@ -22,6 +22,12 @@ const useEmployeeActions = (url) => {
       }
     };
     fetchTasks();
+
+    const intervalId = setInterval(fetchTasks, 2000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, [url]);
   const addTask = async (newTask) => {
     try {

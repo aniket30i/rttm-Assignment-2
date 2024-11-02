@@ -155,6 +155,14 @@
       "task_id": "10044",
       "assigned_to": "AAP001",
       "timestamp": "2024-11-01T22:04:33.870Z"
+    },
+    {
+      "id": "a1dd",
+      "task": "Buy Hard Drives",
+      "message": "New task has been added - check board for info",
+      "task_id": "10049",
+      "assigned_to": "AAP002",
+      "timestamp": "2024-11-02T10:12:08.902Z"
     }
   ]
 }
